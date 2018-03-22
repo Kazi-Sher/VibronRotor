@@ -1,4 +1,4 @@
-% Copyright (C) 2018 Kazi Sher Ahmed <kazisherahmed@gmail.com> & Prof. S.M. Ahmad.
+% Copyright (C) 2018 Kazi Sher Ahmed <kazisherahmed@gmail.com> & SM Ahmad.
 % VibronRotor - A finite-element code for rotordynamic analysis of flexible rotor-bearing systems.
 % VibronRotor is released under the terms of GNU General Public License 3.0.
 
