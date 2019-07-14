@@ -1,14 +1,10 @@
-% Copyright (C) 2018 Kazi Sher Ahmed <kazisherahmed@gmail.com> & SM Ahmad.
-% This file is a part of VibronRotor - A finite-element code for rotordynamic analysis of flexible rotor-bearing systems.
-% VibronRotor is released under the terms of GNU General Public License 3.0.
-
-% Eigenanalysis
+%% Eigenanalysis
 function [evaludhz, evalhzr] = mode_shapes(num_plot, lvec, w, mbb, kbb, cbb, gbb, num_bearings, dist_bearings, l_segments, dist_segments, d_segments, num_discs, l_discs, dist_discs, d_discs, lbeam)
 
     I = eye(length(mbb));      % identity matrix of (4n+4)*(4n+4) order or (4m X 4m)
     O = zeros(length(mbb));    % null matrix of (4n+4)*(4n+4) order
 
-    A = [ O I ; (-mbb\kbb) (-mbb\(cbb+w*gbb)) ] ;
+    A = [ O I ; -mbb\kbb -mbb\(cbb+w*gbb) ] ;
 
     % MATLAB help: [V,D] = eig(A) returns diagonal matrix D of eigenvalues and matrix V 
     % whose columns are the corresponding right eigenvectors, so that A*V = V*D
@@ -26,13 +22,14 @@ function [evaludhz, evalhzr] = mode_shapes(num_plot, lvec, w, mbb, kbb, cbb, gbb
 
     evalud = diag(evalu); %square matrix containing eigenvalues converted to a 
     % vector of eigenvalues, order 8mX1
-    evaludhz = evalud/(2*pi); % Conversion into Hz (order: 8mX1)
+    evaludhz0 = evalud/(2*pi); % Conversion into Hz (order: 8mX1)
 
     evec2 = evec1( (1:((length(evec1))/2)) , 1:length(evec1) ); 
     % Lower part contains mode shapes multiplied by lambda.
     % [Inman 4th ed. pg. 403,402] Taking upper half. evec2 is 4mX8m.
 
     firstcolumns = 1:2:(length(A));
+    evaludhz = evaludhz0;
     evaludhz(firstcolumns) = []; % 4mX1
     evec2(:,firstcolumns) = []; % 4mX4m
 
@@ -45,8 +42,8 @@ function [evaludhz, evalhzr] = mode_shapes(num_plot, lvec, w, mbb, kbb, cbb, gbb
         evalhzr(cnt,1) = (evaludhz(indexhz(cnt)));
     end
 
-%    zeta = -(real(evalhzr(:,1))) ./ abs(evalhzr(:,1));
-%    c_factor = ((1-(zeta.^2)).*(1-(2*(zeta.^2)))).^0.5; % to account for difference b/w damped nat freq & critical speeds as per Vance 2010
+    zeta = -(real(evalhzr(:,1))) ./ abs(evalhzr(:,1));
+    c_factor = ((1-(zeta.^2)).*(1-(2*(zeta.^2)))).^0.5; % to account for difference b/w damped nat freq & critical speeds as per Vance 2010
 
     for cnt = 1:length(evec2) % loops runs for all columns
         evec(:,cnt) = evec2(:,indexhz(cnt)); % Unsorted columns of eigenvectors 
@@ -93,7 +90,7 @@ function [evaludhz, evalhzr] = mode_shapes(num_plot, lvec, w, mbb, kbb, cbb, gbb
          end
      end
 
-% Separate Repeated Plotting
+%% Separate Repeated Plotting
     modeshape_axislength = [-1.3 1.6];
     
     for mode_cnt = 1:num_plot
@@ -132,8 +129,7 @@ function [evaludhz, evalhzr] = mode_shapes(num_plot, lvec, w, mbb, kbb, cbb, gbb
         % backward whirl. So first, third, fifth and so on rows of evalhzr and
         % first, third, fifth and so on columns of evec_disp_mode are being used.
 
-%       Plotting the rotor for mode shapes
-             
+        % Plotting the rotor for mode shapes
         for a=1:length(l_segments)
             rectangle('Position',[dist_segments(a)  0-d_segments(a)*4.347/2  l_segments(a)  d_segments(a)*4.347],'edgecolor','k','LineWidth',0.4); % shaft
         end
@@ -149,7 +145,7 @@ function [evaludhz, evalhzr] = mode_shapes(num_plot, lvec, w, mbb, kbb, cbb, gbb
         set(gcf,'color','w');
         set(gca,'fontsize',10);
         axis([0 lbeam -1.3 1.6]);
-        xlabel('Rotor Length (m)');
+        xlabel('Rotor Length [m]');
         ylabel('Normalized Displacement');
 
 
@@ -197,9 +193,9 @@ function [evaludhz, evalhzr] = mode_shapes(num_plot, lvec, w, mbb, kbb, cbb, gbb
         set(gcf,'color','w');
         set(gca,'fontsize',10);
         axis([0 lbeam -1.3 1.6]);
-        xlabel('Rotor Length (m)');
+        xlabel('Rotor Length [m]');
         ylabel('Normalized Displacement');
-    disp('Press Enter to display next mode'); pause
+##    disp('Press Enter to display next mode'); pause
     end
-    disp('Press Enter to continue to the next selected functionality.'); pause
+##    disp('Press Enter to continue to the next selected functionality.'); pause
 end

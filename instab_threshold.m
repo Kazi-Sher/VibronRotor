@@ -1,8 +1,4 @@
-% Copyright (C) 2018 Kazi Sher Ahmed <kazisherahmed@gmail.com> & SM Ahmad.
-% This file is a part of VibronRotor - A finite-element code for rotordynamic analysis of flexible rotor-bearing systems.
-% VibronRotor is released under the terms of GNU General Public License 3.0.
-
-% With Cubic Spline: Instability Threshold ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+%% With Cubic Spline: Instability Threshold ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 function instab_threshold(th_modes, th_increments, th_range, support_coeff_speed, kxx_speed, kyy_speed,kxy_speed,kyx_speed, cxx_speed, cxy_speed, cyy_speed, cyx_speed, k, c_mat, num_bearings, node_bearings, mbb, gbb )
 
     % clear A evec1 evalu evalud evaludhz firstcolumns evalorder indexhz evalhzr;
@@ -71,5 +67,10 @@ function instab_threshold(th_modes, th_increments, th_range, support_coeff_speed
     title('Instability Threshold Map');
     xlabel('Rotor Speed (RPM)')
     ylabel('Damping Exponent (rad/s)')
-    disp('Press Enter for the next selected functionality.'); pause
+    grid on;
+    set(gca,'box','off');    
+    set(gcf,'color','w');
+    set(gca,'fontsize',9);  
+##    export_fig instab.png;
+%     disp('Press Enter for the next selected functionality.'); pause
 end

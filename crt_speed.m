@@ -163,5 +163,5 @@ function crt_speed(crt_rpm_range, crt_rpm_inc, dyn_k, k, num_bearings, node_bear
   set(gcf,'color','w');
   set(gca,'fontsize',9);   
 
-  disp('Press Enter to continue to the next selected functionality.'); pause
+##  disp('Press Enter to continue to the next selected functionality.'); pause
 end

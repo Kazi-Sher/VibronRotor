@@ -1,7 +1,3 @@
-% Copyright (C) 2018 Kazi Sher Ahmed <kazisherahmed@gmail.com> & SM Ahmad.
-% This file is a part of VibronRotor - A finite-element code for rotordynamic analysis of flexible rotor-bearing systems.
-% VibronRotor is released under the terms of GNU General Public License 3.0.
-
 function imb_resp(orb_wrpm, fx_node_out, fx_node_in, ini_phase, ini_imb, imb_interval, ana_range, node_discs, kbb, mbb, cbb, gbb)
 
     % Imbalance Response Code [Equations: Chen pg321]
@@ -84,10 +80,8 @@ function imb_resp(orb_wrpm, fx_node_out, fx_node_in, ini_phase, ini_imb, imb_int
     % Not putting the minus sign with phase will lead to inverted plot about 0 degree line.
     figure
     subplot(2,1,1)
-    FE_phasex = plot ( RPM , Imb_out_phasx(1,:) , ('-'),'LineWidth',1,'Color',[0.667 0 1]); hold on;
-%    FE_phasex.Color = [0.667 0 1]; hold on;
-    FE_phasey = plot ( RPM , Imb_out_phasy(1,:) , ('--'),'LineWidth',1,'Color',[0 0 1]); hold on;
-%    FE_phasey.Color = [0 0 1]; hold on;
+    FE_phasex = plot ( RPM , Imb_out_phasx(1,:) , ('-'),'LineWidth',1); hold on;
+    FE_phasey = plot ( RPM , Imb_out_phasy(1,:) , ('--'),'LineWidth',1); hold on;
     legend([FE_phasex FE_phasey], {['X-Phase'],['Y-Phase']}, 'FontSize',10,'Location','northwest' );
     title(['Response at Node: ', num2str(fx_node_out)]);
     xlabel('Rotor Speed (RPM)');
@@ -99,10 +93,8 @@ function imb_resp(orb_wrpm, fx_node_out, fx_node_in, ini_phase, ini_imb, imb_int
     set(gca,'fontsize',9);   
 
     subplot(2,1,2) 
-    FE_ampx = plot ( RPM , Imb_out_magx(1,:)*1000, ('-'),'LineWidth',1,'Color',[0.667 0 1]); hold on;
-%    FE_ampx.Color = [0.667 0 1]; hold on; % if need mils, *39370.1 
-    FE_ampy = plot ( RPM , Imb_out_magy(1,:)*1000 , ('--'),'LineWidth',1,'Color',[0 0 1]); hold on;
-%    FE_ampy.Color = [0 0 1]; hold on;
+    FE_ampx = plot ( RPM , Imb_out_magx(1,:)*1000, ('-'),'LineWidth',1); hold on; % if need mils, *39370.1 
+    FE_ampy = plot ( RPM , Imb_out_magy(1,:)*1000 , ('--'),'LineWidth',1); hold on;
 
     legend([FE_ampx FE_ampy], {['X-Amplitude'], ['Y-Amplitude']}, 'FontSize',10,'Location','northwest' );
 
@@ -111,8 +103,9 @@ function imb_resp(orb_wrpm, fx_node_out, fx_node_in, ini_phase, ini_imb, imb_int
     grid off;
     set(gca,'box','off');    
     set(gcf,'color','w');
-    set(gca,'fontsize',9);   
-    disp('Enter to continue to the orbit plot'); pause
+    set(gca,'fontsize',9);
+##    export_fig imb_balance.png;
+%     disp('Enter to continue to the orbit plot'); pause
 
     %% Orbit Plotting
 
@@ -136,8 +129,7 @@ function imb_resp(orb_wrpm, fx_node_out, fx_node_in, ini_phase, ini_imb, imb_int
 
             FE_code_plus_sign = plot ( x_time(1)*1000, y_time(1)*1000, ('w+') ); hold on;
             plot ( x_time(1)*1000, y_time(1)*1000, ('k+') ); hold on;
-            x_time_plot = plot ( x_time*1000, y_time*1000, ('-'),'LineWidth',1,'Color',[0.667 0 1]); hold on; 
-%            x_time_plot.Color = [0.667 0 1]; hold on;
+            x_time_plot = plot ( x_time*1000, y_time*1000, ('-'),'LineWidth',1 ); hold on;
     %         text ( x_time*1000, y_time*1000, labels, 'VerticalAlignment','bottom', 'HorizontalAlignment','right');
            
             legend([ FE_code_plus_sign ], {['Orbit starts at +']}, 'FontSize',10,'Location','northwest' );
@@ -153,7 +145,8 @@ function imb_resp(orb_wrpm, fx_node_out, fx_node_in, ini_phase, ini_imb, imb_int
         set(gca,'box','off');    
         set(gcf,'color','w');
         set(gca,'fontsize',9);  
-        disp('Press Enter to continue to the next selected functionality.'); pause
+##        export_fig orbit.png;
+%         disp('Press Enter to continue to the next selected functionality.'); pause
         
     %%
     % % Major / Minor axis length calculations
