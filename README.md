@@ -1,5 +1,5 @@
 # VibronRotor: Finite-Element Rotordynamic Code
-Authors: Kazi Sher Ahmed (kazisherahmed@gmail.com) and [Prof. S. M. Ahmad]( https://www.giki.edu.pk/Faculty/Professor-S-M-Ahmad) (smahmad@giki.edu.pk)
+Authors: Kazi Sher Ahmed (kazisherahmed@gmail.com) and [Prof. S. M. Ahmad]( https://www.giki.edu.pk/Faculty/Professor-S-M-Ahmad)
 
 License: VibronRotor is licensed under the terms of [GNU General Public License 3.0.]( https://www.gnu.org/licenses/gpl-3.0.txt)
 
