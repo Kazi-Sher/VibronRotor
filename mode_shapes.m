@@ -195,7 +195,7 @@ function [evaludhz, evalhzr] = mode_shapes(num_plot, lvec, w, mbb, kbb, cbb, gbb
         axis([0 lbeam -1.3 1.6]);
         xlabel('Rotor Length [m]');
         ylabel('Normalized Displacement');
-##    disp('Press Enter to display next mode'); pause
+%    disp('Press Enter to display next mode'); pause
     end
-##    disp('Press Enter to continue to the next selected functionality.'); pause
+%    disp('Press Enter to continue to the next selected functionality.'); pause
 end
