@@ -71,6 +71,6 @@ function instab_threshold(th_modes, th_increments, th_range, support_coeff_speed
     set(gca,'box','off');    
     set(gcf,'color','w');
     set(gca,'fontsize',9);  
-##    export_fig instab.png;
+%    export_fig instab.png;
 %     disp('Press Enter for the next selected functionality.'); pause
 end
