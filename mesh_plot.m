@@ -15,7 +15,7 @@ function mesh_plot(numbering, lvec, seg_dia_repeated, l_segments, dist_segments,
             str = num2str(a);
             tline = text ( dist_segments(a)+ 0.01, 0-d_segments(a)/2 + d_segments(a) + 0.02 , str );
         end
-##        tline.Color = [223/255 0/255 0/255];
+%        tline.Color = [223/255 0/255 0/255];
     end
     hold on;
      
@@ -26,7 +26,7 @@ function mesh_plot(numbering, lvec, seg_dia_repeated, l_segments, dist_segments,
                 str = num2str(a);
                 tline = text ( dist_discs(a)-l_discs(a)/2 + 0.01, 0-d_discs(a)/2 + d_discs(a) + 0.02 , str );
             end
-##            tline.Color = [0 0 159/255];
+%            tline.Color = [0 0 159/255];
         end
     end
     hold on;
