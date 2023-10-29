@@ -104,7 +104,7 @@ function imb_resp(orb_wrpm, fx_node_out, fx_node_in, ini_phase, ini_imb, imb_int
     set(gca,'box','off');    
     set(gcf,'color','w');
     set(gca,'fontsize',9);
-##    export_fig imb_balance.png;
+%    export_fig imb_balance.png;
 %     disp('Enter to continue to the orbit plot'); pause
 
     %% Orbit Plotting
@@ -145,7 +145,7 @@ function imb_resp(orb_wrpm, fx_node_out, fx_node_in, ini_phase, ini_imb, imb_int
         set(gca,'box','off');    
         set(gcf,'color','w');
         set(gca,'fontsize',9);  
-##        export_fig orbit.png;
+%        export_fig orbit.png;
 %         disp('Press Enter to continue to the next selected functionality.'); pause
         
     %%
