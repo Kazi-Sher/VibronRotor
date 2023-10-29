@@ -55,6 +55,6 @@ function mesh_plot(numbering, lvec, seg_dia_repeated, l_segments, dist_segments,
     set(gca,'YMinorTick','off');  
 %     set(gca,'XColor','r');
 %     axis([0 lbeam -0.06 0.06]);    
-##    export_fig mesh.png;
+%    export_fig mesh.png;
 %     disp('Press Enter to continue to the next selected functionality.'); pause
 end
