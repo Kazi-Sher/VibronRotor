@@ -52,6 +52,6 @@ function freq_interference(num_modes, cd_range, increments, mbb, kbb, cbb, gbb)
     set(gca,'box','off');    
     set(gcf,'color','w');
     set(gca,'fontsize',9)
-##    export_fig campbell.png;
+%    export_fig campbell.png;
 %     disp('Press Enter to continue to the next selected functionality.'); pause
 end
