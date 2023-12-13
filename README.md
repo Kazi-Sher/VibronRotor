@@ -3,6 +3,8 @@ Authors: Kazi Sher Ahmed (kazisherahmed@gmail.com) and [Prof. S. M. Ahmad](https
 
 License: VibronRotor is licensed under the terms of [GNU General Public License 3.0.]( https://www.gnu.org/licenses/gpl-3.0.txt)
 
+Publication: [VibronRotor, an opensource rotordynamic code: Development and benchmarking](https://www.sciencedirect.com/science/article/pii/S0263224118307838)
+
 ## UPDATES
 2024 goals: MATLAB-based GUI
 
