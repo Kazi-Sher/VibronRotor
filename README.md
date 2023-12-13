@@ -4,13 +4,14 @@ Authors: Kazi Sher Ahmed (kazisherahmed@gmail.com) and [Prof. S. M. Ahmad](https
 License: VibronRotor is licensed under the terms of [GNU General Public License 3.0.]( https://www.gnu.org/licenses/gpl-3.0.txt)
 
 ## UPDATES
+2024 goals: MATLAB-based GUI
 *July 14, 2019:* Ability to assign discs with different densities, Timoshenko beam formulation, and plot bugs resolution.
 
 ## DESCRIPTION
-VibronRotor is a finite-element code for prediction of the lateral rotordynamic response of flexible rotors. Employed finite-element formulation is based on the work of Nelson and McVaugh [1]. This code provides analysis tools which enable an appropriate selection of rotor design parameters for stable operation. Mesh approach in the code limits the element length-to-diameter ratio within the user-provided value for modeling accuracy. Response prediction, on a basic level, relies on eigenanalysis and steady-state imbalance response analysis. 
+VibronRotor is a finite-element code for the prediction of the lateral rotordynamic response of flexible rotors. Employed finite-element formulation is based on the work of Nelson and McVaugh [1]. This code provides analysis tools that enable an appropriate selection of rotor design parameters for stable operation. The mesh approach in the code limits the element length-to-diameter ratio within the user-provided value for modeling accuracy. Response prediction, on a basic level, relies on eigenanalysis and steady-state imbalance response analysis. 
 
 ## USAGE
-A free scientific programming language [GNU Octave](https://www.gnu.org/software/octave/#install) is the preferred environment to run the code. However, due to bidirectional syntactic compatibility of GNU Octave with MATLAB, users can also execute the code on MATLAB.
+A free scientific programming language [GNU Octave](https://www.gnu.org/software/octave/#install) is the preferred environment to run the code. However, due to the bidirectional syntactic compatibility of GNU Octave with MATLAB, users can also execute the code on MATLAB.
 
 *core.m* is the parameter input file to define rotor geometrical / mechanical properties, speed-dependent bearing coefficients, and functionalities controls. Selected analysis is executed once *core.m* is run. An interactive GUI is in development to replace the parameter input method.
 
