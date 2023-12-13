@@ -5,6 +5,7 @@ License: VibronRotor is licensed under the terms of [GNU General Public License 
 
 ## UPDATES
 2024 goals: MATLAB-based GUI
+
 *July 14, 2019:* Ability to assign discs with different densities, Timoshenko beam formulation, and plot bugs resolution.
 
 ## DESCRIPTION
