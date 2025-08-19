@@ -55,7 +55,7 @@ format long;
             Damp_yx = 175.126835* [0 0];
         end
 
-        if (vari_supp_coeff == 1) % select if speed-dependent bearing coefficients
+        if (vari_supp_coeff == 1)   % select if speed-dependent bearing coefficients
             kxx_speed = 175.126835* [ 9.00E+03 8.00E+03 7.00E+03 6.00E+03 5.00E+03 4.00E+03 ];
             kyy_speed = 175.126835* [ 9.00E+03 8.00E+03 7.00E+03 6.00E+03 5.00E+03 4.00E+03 ];
             kxy_speed = 175.126835* [ 0 0 0 0 0 0 ];
@@ -88,23 +88,23 @@ format long;
             num_plot       = 3;  % number of modes to plot
         
         imb_resp_control   = 1;
-            ana_range = 6000; % analysis range in rpm
-            imb_interval = 10; % steps to calculate results
-            ini_imb = [ 10 2 ]; % initial imbalances in g-in
-            ini_phase = [ 0 -90 ]; % phase differences in imbalance masses in degrees
-            fx_node_in = [27 48]; % input nodes
-            fx_node_out = [27]; % output node
-            orb_wrpm = 2750;
+            ana_range      = 6000;      % analysis range in rpm
+            imb_interval   = 10;        % steps to calculate results
+            ini_imb        = [ 10 2 ];  % initial imbalances in g-in
+            ini_phase      = [ 0 -90 ]; % phase differences in imbalance masses in degrees
+            fx_node_in     = [27 48];   % input nodes
+            fx_node_out    = [27];      % output node
+            orb_wrpm       = 2750;
 
         instability_threshold = 1;
-            th_range = 5000; % analysis range [rpm]
-            th_increments = 1000; % steps
-            th_modes = 3; % number of modes to plot
+            th_range          = 5000;   % analysis range [rpm]
+            th_increments     = 1000;   % steps
+            th_modes          = 3;      % number of modes to plot
 
         critical_speed_map = 1;
-            crt_rpm_range = 12000;
-            crt_rpm_inc = 1000;
-            dyn_k = 175.127 .* [ 10000 31623 100000 316228 1000000 3162278 10000000 2e7 3e7 4e7 ]; % in N/m
+            crt_rpm_range  = 12000;
+            crt_rpm_inc    = 1000;
+            dyn_k          = 175.127 .* [ 10000 31623 100000 316228 1000000 3162278 10000000 2e7 3e7 4e7 ];    % in N/m
                        
 %% Code Flow [ users do not need to edit below ]
     
@@ -142,3 +142,4 @@ format long;
               crt_speed(crt_rpm_range, crt_rpm_inc, dyn_k, k, num_bearings, node_bearings, mbb, gbb,cbb );
 
          end
+
