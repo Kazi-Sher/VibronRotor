@@ -11,33 +11,33 @@ format long;
         beam_th = 1;
 
     % Mass matrix formulation [0 is for No, 1 is for Yes]
-        lumped_mass = 0;
+        lumped_mass     = 0;
         consistent_mass = 1;
 
     % Bearing coefficients configuration [0 is for No, 1 is for Yes]
-        const_supp_coeff   = 1; % Constant [keep it Yes always]
-        vari_supp_coeff    = 1; % Speed-Dependent [only for instability threshold and critical speed map]
+        const_supp_coeff   = 1;   % Constant [keep it Yes always]
+        vari_supp_coeff    = 1;   % Speed-Dependent [only for instability threshold and critical speed map]
 
     % User-defined parameters
-        w1 = 0;     % rpm of rotor
+        w1        = 0;      % rpm of rotor
         l_d_ratio = 0.4;    % element length-to-diameter ratio
 
     % Rotor geometrical properties
-        num_segments = 7;   % number of segments
-        l_segments = 0.0254 * [ 4 6 10 2 4 2 4 ];     % length of segments [m]
-        d_segments = 0.0254 * [ 1 2 3 2 1.5 1.75 2 ]; % diameter of segments [m]
+        num_segments = 7;                                % number of segments
+        l_segments   = 0.0254 * [ 4 6 10 2 4 2 4 ];      % length of segments [m]
+        d_segments   = 0.0254 * [ 1 2 3 2 1.5 1.75 2 ];  % diameter of segments [m]
 
-        num_discs = 3; % number of load discs
-        l_discs = 0.0254 * [ 2 2 2 ]; % length of discs [m]
-        d_discs = 0.0254 * [ 22 11 10 ];    % diameter of discs [m]
-        dist_discs = 0.0254 * [ 15 17 31 ]; % distance of disc centres from left-most end of shaft [m]
-        disc_density = 27679.9 * [0.283 0.283 0.283]; % densities of discs
+        num_discs    = 3;                              % number of load discs
+        l_discs      = 0.0254 * [ 2 2 2 ];             % length of discs [m]
+        d_discs      = 0.0254 * [ 22 11 10 ];          % diameter of discs [m]
+        dist_discs   = 0.0254 * [ 15 17 31 ];          % distance of disc centres from left-most end of shaft [m]
+        disc_density = 27679.9 * [0.283 0.283 0.283];  % densities of discs
 
-        num_bearings = 2; % number of bearing supports
+        num_bearings  = 2;                  % number of bearing supports
         dist_bearings = 0.0254 * [ 3 25 ];  % distance of bearing centres from left-most end of shaft [m]
 
     % Rotor mechanical properties
-       if (const_supp_coeff == 1) % select if constant bearing coefficients 
+       if (const_supp_coeff == 1)               % select if constant bearing coefficients 
             Kxx = 175.126835* [31.6e3 31.6e3];  % bearing stiffness in N/m
             Kyy = 175.126835* [31.6e3 31.6e3];
              
@@ -69,10 +69,10 @@ format long;
             support_coeff_speed = [ 1 1000 3000 5000 7000 10000 ];
         end
 
-        E = 6894.76 * 30e6;           % modulus of elasticity in N/m2
-        density = 27679.9 * 0.283;    % density of shaft material [kg/m3]
-        G = 6894.76 * 12e6;           % Shear modulus [Pa]
-        k_sh = 1.128;                 % shear form factor for circular cross section
+        E       = 6894.76 * 30e6;           % modulus of elasticity in N/m2
+        density = 27679.9 * 0.283;          % density of shaft material [kg/m3]
+        G       = 6894.76 * 12e6;           % Shear modulus [Pa]
+        k_sh    = 1.128;                    % shear form factor for circular cross section
 
     % Functionalities [0 is for No, 1 is for Yes]
         plot_rotor         = 1;
@@ -80,12 +80,12 @@ format long;
             numbering      = 1;
         
         campbell_diag      = 1;
-            cd_range = 6000;  % analysis range in rpm
-            increments = 500; % increments to calculate results after
-            num_modes = 3; % number of modes to plot
+            cd_range       = 6000;  % analysis range in rpm
+            increments     = 500;   % increments to calculate results after
+            num_modes      = 3;     % number of modes to plot
 
-        combined_modes     =1;
-            num_plot = 3; % number of modes to plot
+        combined_modes     = 1;
+            num_plot       = 3;  % number of modes to plot
         
         imb_resp_control   = 1;
             ana_range = 6000; % analysis range in rpm
@@ -140,4 +140,5 @@ format long;
          if(critical_speed_map==1)
 %             crt_speed(support_coeff_speed, kxx_speed, kyy_speed,kxy_speed,kyx_speed, cxx_speed, cxy_speed, cyy_speed, cyx_speed, k, c_mat, num_bearings, node_bearings, mbb, gbb);
               crt_speed(crt_rpm_range, crt_rpm_inc, dyn_k, k, num_bearings, node_bearings, mbb, gbb,cbb );
+
          end
