@@ -5,10 +5,12 @@ License: VibronRotor is licensed under the terms of [GNU General Public License 
 
 Publication: [VibronRotor, an opensource rotordynamic code: Development and benchmarking](https://www.sciencedirect.com/science/article/pii/S0263224118307838)
 
-## UPDATES
+## TIMELINE
 2025 goals: MATLAB-based GUI
 
 *July 14, 2019:* Ability to assign discs with different densities, Timoshenko beam formulation, and plot bugs resolution.
+*March 22, 2018:* VibronRotor version 1 released.
+
 
 ## DESCRIPTION
 VibronRotor is a finite-element code for the prediction of the lateral rotordynamic response of flexible rotors. Employed finite-element formulation is based on the work of Nelson and McVaugh [1]. This code provides analysis tools that enable an appropriate selection of rotor design parameters for stable operation. The mesh approach in the code limits the element length-to-diameter ratio within the user-provided value for modeling accuracy. Response prediction, on a basic level, relies on eigenanalysis and steady-state imbalance response analysis. 
