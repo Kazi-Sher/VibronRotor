@@ -9,6 +9,7 @@ Publication: [VibronRotor, an opensource rotordynamic code: Development and benc
 2025 goals: MATLAB-based GUI
 
 *July 14, 2019:* Ability to assign discs with different densities, Timoshenko beam formulation, and plot bugs resolution.
+
 *March 22, 2018:* VibronRotor version 1 released.
 
 
