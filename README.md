@@ -10,7 +10,7 @@ Publication: [VibronRotor, an opensource rotordynamic code: Development and benc
 
 *July 14, 2019:* Ability to assign discs with different densities, Timoshenko beam formulation, and plot bugs resolution.
 
-*March 22, 2018:* VibronRotor version 1 released.
+*March 22, 2018:* VibronRotor version 1.0 released.
 
 
 ## DESCRIPTION
